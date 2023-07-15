@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Object Detection</title>
+  </head>
+  <body>
+    <h1>Object Detection</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" name="image">
+      <button type="submit">Detect Objects</button>
+    </form>
+    
+    {% if predictions %}
+    <h2>Results:</h2>
+    <ul>
+      {% for pred in predictions %}
+      <li>{{ pred }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </body>
+</html>
