@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Object Detection Results</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    {% if labels %}
+        <ul>
+        {% for label in labels %}
+            <li>{{ label }}: {{ probs.forloop.counter0 }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
